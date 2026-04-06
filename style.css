@@ -1,0 +1,185 @@
+/* 1. Earthy "Terra & Teal" Variables */
+:root {
+    --bg-color: #b05c62;       
+    --accent-teal: #333d9c;    
+    --accent-slate: #585d83;    
+    --accent-rose: #d375d3;    
+    --sidebar-bg: #3e8067;      
+    --text-main: #180404b5;
+    --card-bg: #eaf4b3;
+    --border-color: #1e0520;
+}
+
+* {
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+}
+
+/* 2. Header */
+header {
+    background: rgb(106, 157, 180);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--accent-rose); 
+}
+
+header h1 {
+    font-size: 1.2rem;
+    color: var(--accent-teal);
+    margin: 0;
+}
+
+.controls button {
+    background: var(--accent-slate);
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px; 
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.controls button:hover {
+    background: var(--accent-teal);
+}
+
+/* 3. Main Container */
+.main-container {
+    display: flex;
+    min-height: calc(100vh - 70px);
+}
+
+/* 4. Sidebar (Weekly Master Goals) */
+.weekly-goals {
+    width: 320px;
+    background: var(--sidebar-bg);
+    color: rgb(255, 255, 255);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.weekly-goals h3 {
+    color: var(--bg-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.weekly-goals textarea {
+    flex-grow: 1;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: rgb(255, 255, 255);
+    padding: 1rem;
+    line-height: 1.6;
+    resize: none;
+    outline: none;
+}
+
+.weekly-goals textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* 5. The 7-Day Grid */
+.planner-grid {
+    flex-grow: 1;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.day-card {
+    background: var(--card-bg);
+    border-radius: 20px; /* Softer, rounder corners */
+    padding: 1.5rem;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+}
+
+.day-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(107, 105, 105, 0.06);
+}
+
+.day-card h3 {
+    margin-top: 0;
+    color: var(--accent-slate);
+    border-bottom: 2px solid var(--bg-color);
+    padding-bottom: 10px;
+}
+
+.date-label {
+    color: var(--accent-rose);
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* 6. Goals Section */
+.goal-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.goal-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--accent-teal);
+    cursor: pointer;
+}
+
+.goal-item input[type="text"] {
+    border: none;
+    background: transparent;
+    margin-left: 10px;
+    width: 100%;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    outline: none;
+}
+
+.goal-item input[type="checkbox"]:checked + input[type="text"] {
+    text-decoration: line-through;
+    color: #99aab5;
+}
+
+/* 7. Achievements Area */
+.achieve-area label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--accent-rose);
+    margin-top: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.achieve-area textarea {
+    width: 100%;
+    height: 100px;
+    background: #bab5b5;
+    border: 1px solid var(--bg-color);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 0.9rem;
+    resize: none;
+    outline: none;
+}
+
+.achieve-area textarea:focus {
+    border-color: var(--accent-teal);
+}
+
